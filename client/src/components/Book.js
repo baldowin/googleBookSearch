@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../utils/API";
+import API from "../API";
 
 class Book extends Component {
     state = {
@@ -11,12 +11,14 @@ class Book extends Component {
         .catch(err => console.log(err));
     }
     render(){
-        <div>
-            <img src={this.state.book.image}/>
-            <h2>{this.state.book.title} by {this.state.book.author}</h2>
-            <p>{this.state.book.description}</p>
-            <a href={this.state.book.link}>Find on Google Books</a>
-        </div>
+        return(
+            <div>
+                <img src={this.state.book.image}/>
+                <h2>{this.state.book.title} by {this.state.book.author}</h2>
+                <p>{this.state.book.description}</p>
+                <a href={this.state.book.link}>Find on Google Books</a>
+            </div>
+        )
     }
 }
 
